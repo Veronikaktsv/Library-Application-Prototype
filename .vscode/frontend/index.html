@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <p x-text="myData"></p> 
+</head>
+<body>
+  <form id="userForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+    <button type="button" id="saveButton">Save User</button>
+    <button type="button" id="loginButton">Login</button>
+    <button type="button" id="testButton">Test Protected Route</button>
+    <button type="button" id="logoutButton">Logout</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing app.js</title>
+</head>
+<body>
+    <!-- You can include any HTML content here if needed -->
+    <script src="app.js"></script>
+    <body>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Alpine Basics</title>
+            </head>
+            <body>
+                <div x-data="foo" x-cloak>
+                <p x-text="myData"></p>
+                <input type="text" x-model="myData">
+                <button @click="myData=changeData">Click Me</button>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js">
+                </script>
+                <script src="app.js"></script>
+            </body>
+            </html>
+        
+        </html>
+        #Toggle Visibility
+        <div x-data="{ isVisible: true }">
+            <button @click="isVisible = !isVisible">Toggle Visibility</button>
+            <p x-text="myData" x-show="isVisible"></p>
+        </div>
+        #List Rendering
+        <div x-data="{ items: [] }">
+            <input type="text" x-model="newItem">
+            <button @click="items.push(newItem)">Add Item</button>
+            <ul>
+                <li x-for="item in items" x-text="item"></li>
+            </ul>
+        </div>
+        #Conditional Styling
+        <p :class="{ 'red-text': myData === 'Hello Alpine.js!' }" x-text="myData"></p>
+        #Create a Counter
+        <div x-data="{ counter: 0 }">
+            <button @click="counter = Math.max(0, counter - 1)">-</button>
+            <span x-text="counter"></span>
+            <button @click="counter++">+</button>
+        </div>
+        #Dynamic Input Field Placeholder
+        <input type="text" x-bind:placeholder="'Your message is ' + myData">

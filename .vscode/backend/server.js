@@ -3,14 +3,14 @@ require('dotenv').config();
  const cors = require('cors'); // Import the cors middleware
  const bodyParser = require('body-parser');
  const app = express();
- const pool = require('./db')
- const routes = require('./routes');
+ const pool = require('./db.js')
+ const routes = require('./routes.js');
  const api = require('./api.js')
  app.use(express.json());
  app.use(bodyParser.json());
- const authRoutes = require('./authRoutes'); // Assuming you named the route handler file authRoutes.js
+ const authRoutes = require('./authRoutes.js'); // Assuming you named the route handler file authRoutes.js
  const authorize = require('./authorize.js');
- const authenticateToken = require('./authMiddleware');
+ const authenticateToken = require('./authMiddleware.js');
  const dotenv = require('dotenv').config();
  // Define CORS options
  const corsOptions = {

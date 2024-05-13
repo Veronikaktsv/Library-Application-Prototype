@@ -1,29 +1,36 @@
-// authRoutes.js
+// userRoutes.js
 
 const express = require('express');
-const bcrypt = require('bcrypt');
-const pool = require('./db'); // Assuming you have a file named db.js for establishing the database connection
 const router = express.Router();
+const userRepository = require('./userRepository');
 
-// POST /register route handler
-router.post('/register', async (req, res) => {
-    const { username, password } = req.body;
-
-    try {
-        // Hash the password
-        const hashedPassword = await bcrypt.hash(password, 10); // Use a salt round of 10
-
-        // Insert the new user into the database
-        const query = 'INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *';
-        const values = [username, hashedPassword];
-        const result = await pool.query(query, values);
-
-        // Return the newly created user
-        res.status(201).json(result.rows[0]);
-    } catch (error) {
-        console.error('Error registering user:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
+// Route to get all users
+router.get('/users', async (req, res) => {
+  try {
+    const users = await userRepository.getAllUsers();
+    res.json(users);
+  } catch (error) {
+    console.error('Error getting users:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
+
+// Route to get a user by ID
+router.get('/users/:id', async (req, res) => {
+  const userId = req.params.id;
+  try {
+    const user = await userRepository.getUserById(userId);
+    if (user) {
+      res.json(user);
+    } else {
+      res.status(404).json({ error: 'User not found' });
+    }
+  } catch (error) {
+    console.error('Error getting user by ID:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Other user-related routes can be defined here
 
 module.exports = router;

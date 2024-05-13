@@ -1,20 +1,37 @@
 // localStorageUtils.js
 
-// Save data to local storage
-function saveData(key, value) {
-    localStorage.setItem(key, JSON.stringify(value));
-}
-
-// Retrieve data from local storage
-function getData(key) {
-    const data = localStorage.getItem(key);
-    return JSON.parse(data);
-}
-
-// Remove data from local storage
-function removeData(key) {
-    localStorage.removeItem(key);
-}
-
-// Export functions for use in other modules
-module.exports = { saveData, getData, removeData };
+// Function to save data to localStorage
+function saveToLocalStorage(key, data) {
+    try {
+      localStorage.setItem(key, JSON.stringify(data));
+      return true;
+    } catch (error) {
+      console.error('Error saving to localStorage:', error);
+      return false;
+    }
+  }
+  
+  // Function to retrieve data from localStorage
+  function getFromLocalStorage(key) {
+    try {
+      const data = localStorage.getItem(key);
+      return data ? JSON.parse(data) : null;
+    } catch (error) {
+      console.error('Error retrieving from localStorage:', error);
+      return null;
+    }
+  }
+  
+  // Function to remove data from localStorage
+  function removeFromLocalStorage(key) {
+    try {
+      localStorage.removeItem(key);
+      return true;
+    } catch (error) {
+      console.error('Error removing from localStorage:', error);
+      return false;
+    }
+  }
+  
+  module.exports = { saveToLocalStorage, getFromLocalStorage, removeFromLocalStorage };
+  

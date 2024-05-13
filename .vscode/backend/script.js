@@ -1,25 +1,32 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const saveButton = document.getElementById('saveButton');
-  const loginButton = document.getElementById('loginButton');
-  const testButton = document.getElementById('testButton');
-  const logoutButton = document.getElementById('logoutButton');
-  const userForm = document.getElementById('userForm');
+// script.js
 
-  saveButton.addEventListener('click', () => {
-    // Implement logic to save new username and password to the database using Fetch
-    // Use userForm.username.value and userForm.password.value to get the input values
-  });
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Script loaded.');
 
-  loginButton.addEventListener('click', () => {
-    // Implement logic to log the user in and receive a JWT token using Fetch
-  });
+  // Example: Fetch books from API and display them on the page
+  fetch('/api/books')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Example: Render list of books on the page
+      renderBooks(data);
+    })
+    .catch(error => {
+      console.error('Error fetching books:', error);
+    });
 
-  testButton.addEventListener('click', () => {
-    // Implement logic to test the protected route by sending the JWT token back to the server using Fetch
-  });
+  function renderBooks(books) {
+    const bookList = document.getElementById('book-list');
+    bookList.innerHTML = ''; // Clear previous book list
 
-  logoutButton.addEventListener('click', () => {
-    // Implement logic to log the user out (clear the JWT token from local storage)
-    localStorage.removeItem('token');
-  });
+    books.forEach(book => {
+      const listItem = document.createElement('li');
+      listItem.textContent = `${book.title} by ${book.author}`;
+      bookList.appendChild(listItem);
+    });
+  }
 });

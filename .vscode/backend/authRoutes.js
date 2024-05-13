@@ -1,28 +1,32 @@
 // authRoutes.js
 
 const express = require('express');
-const bcrypt = require('bcrypt');
 const router = express.Router();
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+const { User } = require('./models'); // Assuming you have a User model defined
 
-// POST /register route handler
-router.post('/register', async (req, res) => {
-    const { username, password } = req.body;
+// Route to handle user login
+router.post('/login', async (req, res) => {
+  const { username, password } = req.body;
 
-    try {
-        // Hash the password
-        const hashedPassword = await bcrypt.hash(password, 10); // Use a salt round of 10
+  // Find user by username in the database
+  const user = await User.findOne({ where: { username } });
+  if (!user) {
+    return res.status(404).json({ message: 'User not found' });
+  }
 
-        // Insert the new user into the database
-        const query = 'INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *';
-        const values = [username, hashedPassword];
-        const result = await pool.query(query, values);
+  // Compare password with hashed password stored in the database
+  const passwordMatch = await bcrypt.compare(password, user.password);
+  if (!passwordMatch) {
+    return res.status(401).json({ message: 'Incorrect password' });
+  }
 
-        // Return the newly created user
-        res.status(201).json(result.rows[0]);
-    } catch (error) {
-        console.error('Error registering user:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
+  // Generate JWT token
+  const token = jwt.sign({ username: user.username, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
+
+  // Send token as response
+  res.json({ token });
 });
 
 module.exports = router;

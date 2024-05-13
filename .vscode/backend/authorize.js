@@ -1,10 +1,15 @@
-require('dotenv').config();
- const jwt = require("jsonwebtoken");
- module.exports = (req, res, next) => {
-     const token = req.headers['authorization'];
-     if (!token) return res.status(400).end();
-     jwt.verify(token, process.env.SECRET, (err, user) => {
-         if (err) return res.status(403).end();
-         req.user = user;
-         next();
-}); };
+// authorize.js
+
+// Middleware function to authorize user roles
+function authorize(role) {
+    return (req, res, next) => {
+      // Check if user role matches the required role
+      if (req.user.role !== role) {
+        return res.sendStatus(403); // Forbidden if user role does not match
+      }
+      next(); // Move to the next middleware
+    };
+  }
+  
+  module.exports = authorize;
+  

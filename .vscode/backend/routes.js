@@ -3,26 +3,42 @@
 const express = require('express');
 const router = express.Router();
 
-// Define a route handler for POST requests
-router.post('/api/resource', (req, res) => {
-    const data = req.body; // Access the data sent in the request body
-    console.log('Received data:', data);
-
-    // Add your logic to process the data (e.g., save to database, etc.)
-
-    res.send('Data received successfully'); // Send a response back to the client
+// Define routes
+router.get('/', (req, res) => {
+  res.send('Welcome to the Book Library Catalog API!');
 });
 
-router.get('/api/resource/:id', (req, res) => {
-    const category = req.params.category; // Access the first URL segment (:category)
-    const resourceId = req.params.id; // Access the URL parameter (:id)
-    console.log('Received category:', category);
-    console.log('Received resource ID:', resourceId);
+// Example route for listing books
+router.get('/books', (req, res) => {
+  // Implement logic to fetch and return list of books from database
+  res.send('List of books');
+});
 
-    // Add your logic to fetch data based on the resource ID
-    // (e.g., query a database, retrieve data, etc.)
+// Example route for retrieving a specific book by ID
+router.get('/books/:id', (req, res) => {
+  const bookId = req.params.id;
+  // Implement logic to fetch and return book details by ID from database
+  res.send(`Book details for ID ${bookId}`);
+});
 
-    res.send(`Resource with ID ${resourceId} in category ${category} found`); // Send a response back to the client
+// Example route for adding a new book
+router.post('/books', (req, res) => {
+  // Implement logic to add a new book to the database
+  res.send('Add new book');
+});
+
+// Example route for updating an existing book
+router.patch('/books/:id', (req, res) => {
+  const bookId = req.params.id;
+  // Implement logic to update an existing book in the database
+  res.send(`Update book with ID ${bookId}`);
+});
+
+// Example route for deleting a book
+router.delete('/books/:id', (req, res) => {
+  const bookId = req.params.id;
+  // Implement logic to delete a book from the database
+  res.send(`Delete book with ID ${bookId}`);
 });
 
 module.exports = router;

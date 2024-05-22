@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest View</title>
+    <link rel="stylesheet" href="guest.css">
+</head>
+<body>
+    <div class="container">
+        <button id="mainButton" class="main-button">Main</button>
+        <h1>Library Books</h1>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search by title, author, or genre...">
+            <button id="searchButton">Search</button>
+        </div>
+        <ul id="bookList"></ul>
+    </div>
+
+    <!-- Modal structure for viewing book details -->
+    <div id="viewModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="bookId"></h2>
+            <p id="bookTitle"></p>
+            <p id="bookAuthor"></p>
+            <p id="bookGenre"></p>
+        </div>
+    </div>
+
+    <script src="js/guest.js"></script>
+</body>
+</html>

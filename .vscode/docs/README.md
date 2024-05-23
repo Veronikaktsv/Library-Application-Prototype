@@ -83,5 +83,4 @@ For more information about the project concept and plan, refer to the `PROPOSAL.
 
 For any further questions or assistance, feel free to contact us.
 
-## License
-This project is licensed under the ISC License.
+

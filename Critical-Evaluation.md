@@ -1,23 +1,23 @@
 # Critical Evaluation of the Library Application Project
 ## ***Successes***
 
-## Unambiguous Project Structure:
+### Unambiguous Project Structure:
 With distinct frontend and backend components, the project adhered to a well-defined framework. 
 
-## RESTful API Architecture:
+### RESTful API Architecture:
 The REST API endpoints adhered to best standards and had a clean design. Because of this, using the API for the frontend and any potential future integrations was simple and obvious.
 
-## Mechanism of Authentication:
+### Mechanism of Authentication:
 
 It was a wise decision to adopt JWT for authentication, which offers scalable and secure user management. Protected routes were made possible by the installation, guaranteeing that only authorized users may carry out book management tasks.
 
-## Frontend that responds:
+### Frontend that responds:
 The UI was responsive and easy to use, thanks to its construction in HTML5, CSS3, and Alpine.js. The user experience was positive due to the straightforward but efficient design.
 
-## Entire Bookkeeping:
+### Entire Bookkeeping:
 The book management application accomplished all of the CRUD functions with success. Books could be added, updated, and deleted by librarians, and the general public may effectively peruse the catalog.
 
-## Integration of Databases:
+### Integration of Databases:
 MySQL was utilized to handle data efficiently. Performance was maximized in database operations, and the integration went well.
 
 ##  ***Problems and Solutions*** 

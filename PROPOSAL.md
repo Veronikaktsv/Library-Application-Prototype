@@ -1,7 +1,7 @@
 
 # Project Overview
 
-A simple web application that functions as a catalog for a book library makes up the project. There is a basic frontend interface and a REST API backend for the application. With varying degrees of access and functionality, it is intended to serve two user types: readers and librarians.
+The web application that functions as a catalog for a book library makes up the project. There is a basic frontend interface and a REST API backend for the application. With varying degrees of access and functionality, it is intended to serve two user types: readers and librarians.
 
 ##  User Types and Functionalities
 ### 1. Reader (No Authentication Required)

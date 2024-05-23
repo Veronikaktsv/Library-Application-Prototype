@@ -81,6 +81,3 @@ git push origin feature-branch
 ## Project Proposal
 For more information about the project concept and plan, refer to the `PROPOSAL.md` file.
 
-For any further questions or assistance, feel free to contact us.
-
-

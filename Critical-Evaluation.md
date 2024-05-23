@@ -21,7 +21,7 @@ The book management application accomplished all of the CRUD functions with succ
 ## Integration of Databases:
 MySQL was utilized to handle data efficiently. Performance was maximized in database operations, and the integration went well.
 
-## Problems and Solutions
+##  * * Problems and Solutions * * 
 ### Problems with Database Connections:
 - Challenge: Authentication and network setups were the main causes of the initial connection problems to the MySQL database.
 - Solution: The problems were resolved by making sure the user rights were set appropriately, the MySQL server was setup correctly, and the application's connection parameters matched the server's settings.
@@ -47,15 +47,16 @@ MySQL was utilized to handle data efficiently. Performance was maximized in data
 - Challenge: There were difficulties in deploying the program and making sure it operated without a hitch in a live environment, especially when it came to setting up the environment.
 - Solution: Prior to deployment, extensive testing was carried out in both local and staging environments. Configuration variations were managed using environment variables, and standardizing deployments with technologies like Docker was taken into consideration.
 
-### Suggestions for Enhancing Automated Testing:
+## * * Areas for Improvement * *
+### 1. Automated Testing:
 Although some manual testing was done, both frontend and backend automated testing would be beneficial for this project. Higher dependability and the early detection of any flaws in the development cycle would result from doing this.
 
-### Aspects of Scalability
+### 2. Aspects of Scalability
 Scalability may become a problem when the application expands. It may be investigated to put load balancing, database optimization, and possibly switching to a more scalable database solution (like PostgreSQL or a NoSQL alternative) into practice.
 
-### Advanced Functionalities:
+### 3. Advanced Functionalities:
 The application's functionality and user engagement may be improved by adding features like user reviews, book suggestions, and sophisticated search filters.
 
-### Entire Record:
+## Entire Record:
 Although there was some rudimentary documentation available, future developers and application users would benefit from more thorough documentation that included examples of how to use the API, thorough setup instructions, and contribution criteria.
 All things considered, the project was successful as it achieved its main goals and produced a useful and intuitive library catalog application. The experience yielded useful insights for future initiatives, and the issues faced were efficiently resolved.

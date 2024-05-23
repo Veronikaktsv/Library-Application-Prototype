@@ -1,29 +1,41 @@
-The web application targets librarians and users alike, functioning as an extensive book library catalog. It will have an intuitive front-end UI and a RESTful API backend. The following features will be available through the application:
-- Reader Access (No Authentication Needed): Browse Books: By searching and sorting books by category, author, or title, the public can peruse the library's collection.
-- Manage Books: Librarians have privileged access to carry out routine book management tasks (authentication required). Once logged in, users may choose from a set of options to add new books to the library, including their title, author, and category.
-- Revise Current Books: Change details about books that are already listed in the catalog.
-- Delete Books: Take books that are out of print or irrelevant and remove them from the catalog.
-Preliminary Project Plan:
-Planning and Setup Weeks 1-2
-Specify the technical specs and user stories for the project.
-Create GitHub repositories for testing and working on live projects.
-Create the database schema, then install MySQL.
-Create a JWT-based authentication system and REST API endpoints.
-Weeks 3–5: Development of Backend
-Create an Express.js backend to manage database connectivity and application logic.
-Establish RESTful API endpoints to handle user authentication and book management.
-For safe permission and authentication, integrate JWT.
-Test local backend functions.
-Weeks 6-7: Coding for the front end
-With HTML5 and CSS3, create a front-end experience that is responsive.
-Use the Alpine.js framework to implement interactive elements for a better user experience.
-To get and manipulate data, interact with the backend using the Fetch API.
-Check the responsiveness and usability of frontend components.
-Week 8-9: Documentation and Testing
-Document the application architecture, including database schema and API endpoints, in the README.md file.
-Provide comprehensive documentation for developers, including setup instructions and API usage guidelines.
-Conduct thorough testing of both frontend and backend components, including unit tests and integration tests.
-Week 10: Deployment and Demo
-Deploy the application on a free tier of a leading web application platform such as DigitalOcean.
-Ensure the application is accessible and functional in a live environment.
-Provide a functioning demo of the application prototype for evaluation.
+
+# Project Overview
+
+A simple web application that functions as a catalog for a book library makes up the project. There is a basic frontend interface and a REST API backend for the application. With varying degrees of access and functionality, it is intended to serve two user types: readers and librarians.
+
+##  User Types and Functionalities
+### 1. Reader (No Authentication Required)
+
+Browse Books: Public users can explore the library's collection by listing books based on genre, author, or title without needing to log in.
+
+### 2. Librarian (Authentication Required)
+
+Manage Books: Librarians can perform standard book management operations after logging in. They can:
+- Add New Books (POST): Introduce new books to the catalog, with information including title, author, and genre.
+- Update Existing Books (PATCH): Modify information about books already in the catalog.
+- Delete Books (DELETE): Remove books from the catalog that are no longer available or relevant.
+## REST API Endpoint Design
+### 1. User Registration and Authentication
+
+- POST /api/register: Register a new librarian user.
+- POST /api/login: Login as a librarian to get an authentication token.
+
+### 2. Book Management
+
+GET /api/books: Retrieve a list of all books or search books by title, author, or genre.
+POST /api/books: Add a new book to the catalog (Librarian only).
+PATCH /api/books/:id: Update an existing book in the catalog (Librarian only).
+DELETE /api/books/:id: Delete a book from the catalog (Librarian only).
+
+| Milestone                      | Description                                | Timeline  |
+| :---                           |     :---:                                  |      ---: |
+| Project Setup	                 | Initial setup of project                   | Day 1-2   |
+                                   structure and repositories
+| Backend Development            | Develop REST API with user authentication  | Day 3-7   |
+                                   and book management functionality
+| Frontend Development           | Create responsive HTML/CSS/JS              | Day 8-12  |
+                                   frontend with Alpine.js                                 
+| Integration and Testing        |Integrate frontend with backend             | Day 13-15 |
+                                  and perform testing
+| Documentation and Deployment   | Finalize documentation and                 | Day 16-18 |
+                                   deploy the application

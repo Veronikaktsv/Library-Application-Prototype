@@ -1,5 +1,5 @@
 # Critical Evaluation of the Library Application Project
-## *** Successes ***
+## ***Successes***
 
 ## Unambiguous Project Structure:
 With distinct frontend and backend components, the project adhered to a well-defined framework. The division of responsibilities made development and debugging simpler.
@@ -21,7 +21,7 @@ The book management application accomplished all of the CRUD functions with succ
 ## Integration of Databases:
 MySQL was utilized to handle data efficiently. Performance was maximized in database operations, and the integration went well.
 
-##  *** Problems and Solutions *** 
+##  ***Problems and Solutions*** 
 ### Problems with Database Connections:
 - Challenge: Authentication and network setups were the main causes of the initial connection problems to the MySQL database.
 - Solution: The problems were resolved by making sure the user rights were set appropriately, the MySQL server was setup correctly, and the application's connection parameters matched the server's settings.
@@ -47,7 +47,7 @@ MySQL was utilized to handle data efficiently. Performance was maximized in data
 - Challenge: There were difficulties in deploying the program and making sure it operated without a hitch in a live environment, especially when it came to setting up the environment.
 - Solution: Prior to deployment, extensive testing was carried out in both local and staging environments. Configuration variations were managed using environment variables, and standardizing deployments with technologies like Docker was taken into consideration.
 
-## *** Areas for Improvement ***
+## ***Areas for Improvement***
 ### 1. Automated Testing:
 Although some manual testing was done, both frontend and backend automated testing would be beneficial for this project. Higher dependability and the early detection of any flaws in the development cycle would result from doing this.
 

@@ -30,12 +30,12 @@ DELETE /api/books/:id: Delete a book from the catalog (Librarian only).
 | Milestone                      | Description                                | Timeline  |
 | :---                           |     :---:                                  |      ---: |
 | Project Setup	                 | Initial setup of project                   | Day 1-2   |
-                                   structure and repositories
+|                                |  structure and repositories                |           |
 | Backend Development            | Develop REST API with user authentication  | Day 3-7   |
-                                   and book management functionality
+|                                |  and book management functionality         |           |
 | Frontend Development           | Create responsive HTML/CSS/JS              | Day 8-12  |
-                                   frontend with Alpine.js                                 
+|                                |  frontend with Alpine.js                   |           |        
 | Integration and Testing        |Integrate frontend with backend             | Day 13-15 |
-                                  and perform testing
+|                                | and perform testing                        |           |
 | Documentation and Deployment   | Finalize documentation and                 | Day 16-18 |
-                                   deploy the application
+|                                |  deploy the application                    |           |

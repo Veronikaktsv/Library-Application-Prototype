@@ -19,26 +19,26 @@ Browse books by genre, author, or title.
 
 ## Project Setup
 # 1. Clone the repository:
-git clone https://github.com/your-repo/library-application.git
-cd library-application
+```git clone https://github.com/your-repo/library-application.git
+cd library-application```
 
 # 2. Install dependencies:
-npm install
+```npm install```
 
 # 3. Database Setup:
 
 - Create a MySQL database and user with the necessary permissions.
 - Update the database connection settings in app.js:
 
-  const connection = mysql.createConnection({
+```  const connection = mysql.createConnection({
   host: 'localhost',
   user: 'your_mysql_user',
   password: 'your_mysql_password',
   database: 'library'
-});
+});```
 
 # 4. Run the application:
-node app.js
+```node app.js```
 
 # 5. Access the application:
 Open a browser and navigate to http://localhost:3002 (or the appropriate port if 3002 is in use).
@@ -59,11 +59,11 @@ Open a browser and navigate to http://localhost:3002 (or the appropriate port if
 ## Contributing
 # 1. Fork the repository
 # 2. Create a new branch
-git checkout -b feature-branch
+```git checkout -b feature-branch```
 # 3. Make your changes and commit
-git commit -m 'Description of changes'
+```git commit -m 'Description of changes'```
 # 4. Push to the branch
-git push origin feature-branch
+```git push origin feature-branch```
 # 5. Create a Pull Request
 
 
